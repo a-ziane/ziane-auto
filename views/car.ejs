@@ -1,0 +1,72 @@
+<%- include('partials/header') %>
+<section class="container page-header">
+  <a class="link" href="/cars?lang=<%= lang %>"><%= t.carDetail.back %></a>
+</section>
+
+<section class="container car-detail">
+  <div class="car-left">
+    <div>
+      <p class="eyebrow"><%= car.brand %></p>
+      <h1><%= car.model %></h1>
+      <p class="muted"><%= car.year %></p>
+    </div>
+    <div class="gallery">
+      <% car.media.forEach((item) => { %>
+        <img src="<%= item %>" alt="<%= car.brand %> <%= car.model %>" />
+      <% }) %>
+    </div>
+    <div class="card">
+      <p class="eyebrow"><%= t.carDetail.description %></p>
+      <p><%= car.description %></p>
+      <div class="car-footer">
+        <span class="price"><%= car.price %></span>
+        <span class="pill"><%= t.carDetail.rating %> <%= car.rating %></span>
+      </div>
+    </div>
+    <div class="card specs">
+      <p class="eyebrow"><%= t.specs.title %></p>
+      <div class="specs-grid">
+        <div><span><%= t.specs.fuel %></span><strong><%= car.specs.fuel %></strong></div>
+        <div><span><%= t.specs.horsepower %></span><strong><%= car.specs.horsepower %></strong></div>
+        <div><span><%= t.specs.torque %></span><strong><%= car.specs.torque %></strong></div>
+        <div><span><%= t.specs.transmission %></span><strong><%= car.specs.transmission %></strong></div>
+        <div><span><%= t.specs.drivetrain %></span><strong><%= car.specs.drivetrain %></strong></div>
+        <div><span><%= t.specs.engine %></span><strong><%= car.specs.engine %></strong></div>
+        <div><span><%= t.specs.mileage %></span><strong><%= car.specs.mileage %></strong></div>
+        <div><span><%= t.specs.seats %></span><strong><%= car.specs.seats %></strong></div>
+      </div>
+    </div>
+  </div>
+  <div class="car-right">
+    <div class="card">
+      <p class="eyebrow"><%= t.carDetail.availability %></p>
+      <p><%= car.available ? t.carDetail.availableNow : t.carDetail.reserved %></p>
+      <p class="muted"><%= t.carDetail.availabilityNote %></p>
+    </div>
+    <form class="card form" method="post" action="/api/orders">
+      <input type="hidden" name="carName" value="<%= car.brand %> <%= car.model %>" />
+      <p class="eyebrow"><%= t.order.label %></p>
+      <h3><%= t.orderForm.title %></h3>
+      <label>
+        <span><%= t.orderForm.name %></span>
+        <input name="customerName" required />
+      </label>
+      <label>
+        <span><%= t.orderForm.phone %></span>
+        <input name="phone" required />
+      </label>
+      <label>
+        <span><%= t.orderForm.message %></span>
+        <textarea name="message" rows="4"></textarea>
+      </label>
+      <button class="btn primary" type="submit"><%= t.orderForm.button %></button>
+      <p class="muted">After submitting, we will contact you shortly.</p>
+    </form>
+    <div class="card">
+      <p class="eyebrow"><%= t.carDetail.location %></p>
+      <p><%= t.carDetail.locationText %></p>
+      <p class="muted"><%= t.carDetail.locationNote %></p>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer') %>

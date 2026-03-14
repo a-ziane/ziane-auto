@@ -1,62 +1,43 @@
-# Ziane Auto
+# Ziane Auto (Express)
 
-Premium car showroom website for Ziane Auto in Ain Touta, Batna, Algeria. Built as a clean demo with a black + gold theme, multi-language support, car listings, order flow, and Telegram notifications.
+Ziane Auto is a premium car showroom website for Ain Touta, Batna, Algeria. This version uses Express + EJS for fast local development and simple deployment.
 
 ## Features
-- Next.js App Router + TailwindCSS
-- English, French, Arabic language toggle (RTL support for Arabic)
+- Express server with EJS templates
+- English, French, Arabic language toggle (RTL support)
 - Car listings with search and filters
-- Car detail page with image carousel and local video
-- Order form that posts to `/api/orders` and notifies Telegram
-- Prisma schema for PostgreSQL (Supabase-ready)
+- Car detail page with specs and order form
+- Telegram order notifications (optional)
 
 ## Tech Stack
-- Frontend: Next.js, React, TailwindCSS
-- Backend: Next.js API Routes
-- Database: PostgreSQL (Prisma ORM)
-- Media: Local `public/` folder (Cloudinary-ready)
-- Messaging: Telegram Bot API
+- Backend: Express
+- Templates: EJS
+- Styling: Custom CSS
+- Media: Local `public/` folder
 
-## Getting Started
+## Setup
 
-### 1. Install dependencies
+### 1) Install dependencies
 ```bash
 npm install
 ```
 
-### 2. Environment variables
-Create a `.env` file:
-```bash
-cp .env.example .env
-```
-Then fill:
-- `DATABASE_URL`
+### 2) Environment variables
+Create a `.env` file and set:
 - `TELEGRAM_BOT_TOKEN`
 - `TELEGRAM_CHAT_ID`
 
-### 3. Run Prisma
-```bash
-npx prisma generate
-npx prisma migrate dev --name init
-```
-
-### 4. Start dev server
+### 3) Start the server
 ```bash
 npm run dev
 ```
 Open `http://localhost:3000`.
 
-## Order Flow
-1. User fills order form
-2. `POST /api/orders`
-3. Order saved in database
-4. Telegram bot sends notification to owner
+## Media
+Put your images here:
+```
+public/cars
+```
 
-## Roadmap Ideas
-- Admin dashboard for inventory CRUD
-- Cloudinary uploads
-- Advanced filters and pagination
-- SEO optimization
-
-## License
-Private demo for Ziane Auto.
+## Notes
+This demo stores car data in `data/cars.js`. If you want a database later, we can add PostgreSQL and Prisma.

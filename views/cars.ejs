@@ -1,0 +1,66 @@
+<%- include('partials/header') %>
+<section class="container page-header">
+  <p class="eyebrow">Inventory</p>
+  <h1><%= t.cars.title %></h1>
+  <p class="muted"><%= t.cars.subtitle %></p>
+</section>
+
+<section class="container filters">
+  <form class="filters-grid" method="get" action="/cars">
+    <input type="hidden" name="lang" value="<%= lang %>" />
+    <label>
+      <span><%= t.cars.filters.search %></span>
+      <input type="text" name="search" value="<%= filters.search %>" placeholder="<%= t.cars.filters.search %>" />
+    </label>
+    <label>
+      <span><%= t.cars.filters.brand %></span>
+      <select name="brand">
+        <option value=""><%= t.cars.filters.any %></option>
+        <% brands.forEach((item) => { %>
+          <option value="<%= item %>" <%= filters.brand === item ? 'selected' : '' %>><%= item %></option>
+        <% }) %>
+      </select>
+    </label>
+    <label>
+      <span><%= t.cars.filters.year %></span>
+      <select name="year">
+        <option value=""><%= t.cars.filters.any %></option>
+        <% years.forEach((item) => { %>
+          <option value="<%= item %>" <%= String(filters.year) === String(item) ? 'selected' : '' %>><%= item %></option>
+        <% }) %>
+      </select>
+    </label>
+    <label>
+      <span><%= t.cars.filters.availability %></span>
+      <select name="availability">
+        <option value=""><%= t.cars.filters.any %></option>
+        <option value="available" <%= filters.availability === 'available' ? 'selected' : '' %>><%= t.cars.filters.available %></option>
+        <option value="reserved" <%= filters.availability === 'reserved' ? 'selected' : '' %>><%= t.cars.filters.reserved %></option>
+      </select>
+    </label>
+    <button class="btn primary" type="submit">Filter</button>
+  </form>
+</section>
+
+<section class="container">
+  <div class="grid">
+    <% cars.forEach((car) => { %>
+      <a class="card car" href="/cars/<%= car.id %>?lang=<%= lang %>">
+        <img src="<%= car.media[0] %>" alt="<%= car.brand %> <%= car.model %>" />
+        <div class="car-body">
+          <div>
+            <p class="eyebrow"><%= car.brand %></p>
+            <h3><%= car.model %></h3>
+            <p class="muted"><%= car.year %></p>
+          </div>
+          <p class="muted"><%= car.description %></p>
+          <div class="car-footer">
+            <span class="price"><%= car.price %></span>
+            <span class="pill"><%= car.available ? t.cars.filters.available : t.cars.filters.reserved %></span>
+          </div>
+        </div>
+      </a>
+    <% }) %>
+  </div>
+</section>
+<%- include('partials/footer') %>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>" dir="<%= isRtl ? 'rtl' : 'ltr' %>">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ziane Auto</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@400;500;600&family=Cairo:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body class="bg">
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="/?lang=<%= lang %>">Ziane Auto</a>
+      <nav class="nav-links">
+        <a href="/?lang=<%= lang %>"><%= t.nav.home %></a>
+        <a href="/cars?lang=<%= lang %>"><%= t.nav.cars %></a>
+      </nav>
+      <div class="lang">
+        <a class="lang-btn <%= lang === 'en' ? 'active' : '' %>" href="<%= buildLangLink('en') %>">en</a>
+        <a class="lang-btn <%= lang === 'fr' ? 'active' : '' %>" href="<%= buildLangLink('fr') %>">fr</a>
+        <a class="lang-btn <%= lang === 'ar' ? 'active' : '' %>" href="<%= buildLangLink('ar') %>">ar</a>
+      </div>
+    </div>
+  </header>
+  <main>

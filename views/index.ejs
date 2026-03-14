@@ -1,0 +1,71 @@
+<%- include('partials/header') %>
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <p class="eyebrow"><%= t.hero.location %></p>
+      <h1><%= t.hero.title %></h1>
+      <p class="lead"><%= t.hero.subtitle %></p>
+      <div class="actions">
+        <a class="btn primary" href="/cars?lang=<%= lang %>"><%= t.hero.ctaPrimary %></a>
+        <a class="btn ghost" href="/cars?lang=<%= lang %>"><%= t.hero.ctaSecondary %></a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="/cars/coolray-manuel-1.jpg" alt="Showroom" />
+      <div class="hero-caption">
+        <span>Signature</span>
+        <strong>Showroom Picks</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container highlights">
+  <% highlights.forEach((item) => { %>
+    <div class="card">
+      <p class="eyebrow"><%= item.title %></p>
+      <p><%= item.description %></p>
+    </div>
+  <% }) %>
+</section>
+
+<section class="container">
+  <div class="section-title">
+    <div>
+      <p class="eyebrow"><%= t.featured.label %></p>
+      <h2><%= t.featured.title %></h2>
+    </div>
+    <a class="link" href="/cars?lang=<%= lang %>"><%= t.featured.viewAll %></a>
+  </div>
+  <div class="grid">
+    <% featuredCars.forEach((car) => { %>
+      <a class="card car" href="/cars/<%= car.id %>?lang=<%= lang %>">
+        <img src="<%= car.media[0] %>" alt="<%= car.brand %> <%= car.model %>" />
+        <div class="car-body">
+          <div>
+            <p class="eyebrow"><%= car.brand %></p>
+            <h3><%= car.model %></h3>
+            <p class="muted"><%= car.year %></p>
+          </div>
+          <p class="muted"><%= car.description %></p>
+          <div class="car-footer">
+            <span class="price"><%= car.price %></span>
+            <span class="pill"><%= car.available ? t.cars.filters.available : t.cars.filters.reserved %></span>
+          </div>
+        </div>
+      </a>
+    <% }) %>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container cta-inner">
+    <div>
+      <p class="eyebrow"><%= t.order.label %></p>
+      <h2><%= t.order.title %></h2>
+      <p class="muted"><%= t.order.description %></p>
+    </div>
+    <a class="btn ghost" href="/cars?lang=<%= lang %>"><%= t.order.cta %></a>
+  </div>
+</section>
+<%- include('partials/footer') %>

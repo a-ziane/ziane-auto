@@ -1,28 +1,4 @@
-export type CarSpecs = {
-  fuel: string
-  horsepower: string
-  torque: string
-  transmission: string
-  drivetrain: string
-  engine: string
-  mileage: string
-  seats: string
-}
-
-export type Car = {
-  id: string
-  brand: string
-  model: string
-  year: number
-  price: string
-  description: string
-  media: { url: string; type: 'image' | 'video' }[]
-  specs: CarSpecs
-  available: boolean
-  rating: number
-}
-
-export const cars: Car[] = [
+const cars = [
   {
     id: '1',
     brand: 'Geely',
@@ -30,10 +6,7 @@ export const cars: Car[] = [
     year: 2026,
     price: '285M DZD',
     description: 'Stylish crossover with manual transmission and two-tone finish.',
-    media: [
-      { url: '/cars/coolray-manuel-1.jpg', type: 'image' },
-      { url: '/cars/coolray-manuel-2.jpg', type: 'image' }
-    ],
+    media: ['/cars/coolray-manuel-1.jpg', '/cars/coolray-manuel-2.jpg'],
     specs: {
       fuel: 'Gasoline',
       horsepower: '172 hp',
@@ -54,10 +27,7 @@ export const cars: Car[] = [
     year: 2026,
     price: '390M DZD',
     description: 'Full option Coolray with premium tech and comfort.',
-    media: [
-      { url: '/cars/coolray-full-1.jpg', type: 'image' },
-      { url: '/cars/coolray-full-2.jpg', type: 'image' }
-    ],
+    media: ['/cars/coolray-full-1.jpg', '/cars/coolray-full-2.jpg'],
     specs: {
       fuel: 'Gasoline',
       horsepower: '177 hp',
@@ -78,10 +48,7 @@ export const cars: Car[] = [
     year: 2026,
     price: '380M DZD',
     description: 'Full option Coolray with gray roof styling.',
-    media: [
-      { url: '/cars/coolray-toit-gris-1.jpg', type: 'image' },
-      { url: '/cars/coolray-toit-gris-2.jpg', type: 'image' }
-    ],
+    media: ['/cars/coolray-toit-gris-1.jpg', '/cars/coolray-toit-gris-2.jpg'],
     specs: {
       fuel: 'Gasoline',
       horsepower: '177 hp',
@@ -102,10 +69,7 @@ export const cars: Car[] = [
     year: 2026,
     price: '360M DZD',
     description: '1.5 Turbo performance without extra package.',
-    media: [
-      { url: '/cars/coolray-turbo-1.jpg', type: 'image' },
-      { url: '/cars/coolray-turbo-2.jpg', type: 'image' }
-    ],
+    media: ['/cars/coolray-turbo-1.jpg', '/cars/coolray-turbo-2.jpg'],
     specs: {
       fuel: 'Gasoline',
       horsepower: '172 hp',
@@ -126,10 +90,7 @@ export const cars: Car[] = [
     year: 2026,
     price: '320M DZD',
     description: 'Compact SUV with modern design and smart tech.',
-    media: [
-      { url: '/cars/kx1-1.jpg', type: 'image' },
-      { url: '/cars/kx1-2.jpg', type: 'image' }
-    ],
+    media: ['/cars/kx1-1.jpg', '/cars/kx1-2.jpg'],
     specs: {
       fuel: 'Gasoline',
       horsepower: '112 hp',
@@ -150,10 +111,7 @@ export const cars: Car[] = [
     year: 2026,
     price: '430M DZD',
     description: 'Luxury trim with premium interior and safety tech.',
-    media: [
-      { url: '/cars/seltos-luxury-1.jpg', type: 'image' },
-      { url: '/cars/seltos-luxury-2.jpg', type: 'image' }
-    ],
+    media: ['/cars/seltos-luxury-1.jpg', '/cars/seltos-luxury-2.jpg'],
     specs: {
       fuel: 'Gasoline',
       horsepower: '149 hp',
@@ -174,10 +132,7 @@ export const cars: Car[] = [
     year: 2026,
     price: '445M DZD',
     description: 'Full option Tharu XR with advanced driver assist.',
-    media: [
-      { url: '/cars/tharu-xr-1.jpg', type: 'image' },
-      { url: '/cars/tharu-xr-2.jpg', type: 'image' }
-    ],
+    media: ['/cars/tharu-xr-1.jpg', '/cars/tharu-xr-2.jpg'],
     specs: {
       fuel: 'Gasoline',
       horsepower: '150 hp',
@@ -198,10 +153,7 @@ export const cars: Car[] = [
     year: 2026,
     price: '255M DZD',
     description: 'Reliable sedan with manual transmission and great value.',
-    media: [
-      { url: '/cars/mg5-manuel-1.jpg', type: 'image' },
-      { url: '/cars/mg5-manuel-2.jpg', type: 'image' }
-    ],
+    media: ['/cars/mg5-manuel-1.jpg', '/cars/mg5-manuel-2.jpg'],
     specs: {
       fuel: 'Gasoline',
       horsepower: '118 hp',
@@ -222,10 +174,7 @@ export const cars: Car[] = [
     year: 2026,
     price: '575M DZD',
     description: 'Bold T-Roc edition with black exterior styling.',
-    media: [
-      { url: '/cars/t-roc-black-1.jpg', type: 'image' },
-      { url: '/cars/t-roc-black-2.jpg', type: 'image' }
-    ],
+    media: ['/cars/t-roc-black-1.jpg', '/cars/t-roc-black-2.jpg'],
     specs: {
       fuel: 'Gasoline',
       horsepower: '150 hp',
@@ -246,10 +195,7 @@ export const cars: Car[] = [
     year: 2026,
     price: '450M DZD',
     description: 'Full option Atlas SUV with spacious interior.',
-    media: [
-      { url: '/cars/atlas-full-1.jpg', type: 'image' },
-      { url: '/cars/atlas-full-2.jpg', type: 'image' }
-    ],
+    media: ['/cars/atlas-full-1.jpg', '/cars/atlas-full-2.jpg'],
     specs: {
       fuel: 'Gasoline',
       horsepower: '181 hp',
@@ -265,20 +211,19 @@ export const cars: Car[] = [
   }
 ]
 
-export const highlights = [
+const highlights = [
   {
     title: 'Curated Imports',
-    description:
-      'Every vehicle is hand-selected for performance, comfort, and prestige.'
+    description: 'Every vehicle is hand-selected for performance, comfort, and prestige.'
   },
   {
     title: 'Verified History',
-    description:
-      'We verify ownership, service history, and inspection details for every car.'
+    description: 'We verify ownership, service history, and inspection details for every car.'
   },
   {
     title: 'Direct Owner Delivery',
-    description:
-      'Place your order and the Ziane Auto team will contact you within hours.'
+    description: 'Place your order and the Ziane Auto team will contact you within hours.'
   }
 ]
+
+module.exports = { cars, highlights }
