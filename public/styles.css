@@ -481,6 +481,26 @@ a {
 }
 
 @media (max-width: 720px) {
+  .za-logo {
+    font-size: 26px;
+    letter-spacing: 0.12em;
+  }
+  .za-navbar .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero {
+    padding: 60px 0 50px;
+  }
+  .hero-inner {
+    gap: 24px;
+  }
+  .hero-card--spaced {
+    margin: 0;
+  }
+  .stats {
+    margin-top: 18px;
+  }
   .hero-caption {
     position: static;
     margin: 12px;
