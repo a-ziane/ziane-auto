@@ -60,17 +60,17 @@
       <h3><%= t.orderForm.title %></h3>
       <label>
         <span><%= t.orderForm.name %></span>
-        <input name="customerName" required />
+        <input class="form-control" name="customerName" required />
       </label>
       <label>
         <span><%= t.orderForm.phone %></span>
-        <input name="phone" required />
+        <input class="form-control" name="phone" required />
       </label>
       <label>
         <span><%= t.orderForm.message %></span>
-        <textarea name="message" rows="4"></textarea>
+        <textarea class="form-control" name="message" rows="4"></textarea>
       </label>
-      <button class="btn primary" type="submit"><%= t.orderForm.button %></button>
+      <button class="btn btn-danger" type="submit"><%= t.orderForm.button %></button>
       <p class="muted">After submitting, we will contact you shortly.</p>
     </form>
     <div class="card">

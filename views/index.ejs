@@ -6,17 +6,32 @@
       <h1><%= t.hero.title %></h1>
       <p class="lead"><%= t.hero.subtitle %></p>
       <div class="actions">
-        <a class="btn primary" href="/cars?lang=<%= lang %>"><%= t.hero.ctaPrimary %></a>
-        <a class="btn ghost" href="/cars?lang=<%= lang %>"><%= t.hero.ctaSecondary %></a>
+        <a class="btn btn-danger btn-lg" href="/cars?lang=<%= lang %>"><%= t.hero.ctaPrimary %></a>
+        <a class="btn btn-outline-dark btn-lg" href="/cars?lang=<%= lang %>"><%= t.hero.ctaSecondary %></a>
       </div>
     </div>
-    <div class="hero-card">
-      <img src="/cars/coolray-manuel-1.jpg" alt="Showroom" />
+    <div class="hero-card hero-card--spaced">
+      <img src="/cars/atlas-full-1.jpg" alt="Showroom" />
       <div class="hero-caption">
         <span>Signature</span>
         <strong>Showroom Picks</strong>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="container stats">
+  <div class="stat">
+    <span>120+</span>
+    <p>Curated imports delivered</p>
+  </div>
+  <div class="stat">
+    <span>24h</span>
+    <p>Average response time</p>
+  </div>
+  <div class="stat">
+    <span>5★</span>
+    <p>Owner satisfaction rating</p>
   </div>
 </section>
 
@@ -65,7 +80,7 @@
       <h2><%= t.order.title %></h2>
       <p class="muted"><%= t.order.description %></p>
     </div>
-    <a class="btn ghost" href="/cars?lang=<%= lang %>"><%= t.order.cta %></a>
+    <a class="btn btn-outline-dark" href="/cars?lang=<%= lang %>"><%= t.order.cta %></a>
   </div>
 </section>
 <%- include('partials/footer') %>

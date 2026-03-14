@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config({ path: '.env.local' })
 
 const fs = require('fs')
 const path = require('path')
@@ -13,7 +13,15 @@ async function seed() {
     throw new Error('DATABASE_URL is missing in .env')
   }
 
-  const pool = new Pool({ connectionString: process.env.DATABASE_URL })
+  const connectionString = process.env.DATABASE_URL
+  const needsSsl =
+    connectionString.includes('supabase.com') ||
+    connectionString.includes('pooler.supabase.com')
+
+  const pool = new Pool({
+    connectionString,
+    ssl: needsSsl ? { rejectUnauthorized: false } : undefined
+  })
 
   await pool.query(schema)
   await pool.query('DELETE FROM car_media')

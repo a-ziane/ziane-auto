@@ -1,8 +1,21 @@
 const { Pool } = require('pg')
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL
-})
+const buildPoolConfig = () => {
+  const connectionString = process.env.DATABASE_URL
+  if (!connectionString) {
+    throw new Error('DATABASE_URL is missing')
+  }
+  const needsSsl =
+    connectionString.includes('supabase.com') ||
+    connectionString.includes('pooler.supabase.com')
+
+  return {
+    connectionString,
+    ssl: needsSsl ? { rejectUnauthorized: false } : undefined
+  }
+}
+
+const pool = new Pool(buildPoolConfig())
 
 const mapCar = (row) => ({
   id: row.id,

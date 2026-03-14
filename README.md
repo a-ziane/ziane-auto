@@ -25,7 +25,7 @@ npm install
 ```
 
 ### 2) Environment variables
-Create a `.env` file and set:
+Create a `.env.local` file and set:
 - `DATABASE_URL`
 - `TELEGRAM_BOT_TOKEN`
 - `TELEGRAM_CHAT_ID`
