@@ -17,13 +17,24 @@ const buildPoolConfig = () => {
 
 const pool = new Pool(buildPoolConfig())
 
+const parseDescription = (value) => {
+  if (!value) return ''
+  if (typeof value === 'object') return value
+  const text = String(value)
+  try {
+    return JSON.parse(text)
+  } catch (error) {
+    return text
+  }
+}
+
 const mapCar = (row) => ({
   id: row.id,
   brand: row.brand,
   model: row.model,
   year: row.year,
   price: row.price,
-  description: row.description,
+  description: parseDescription(row.description),
   available: row.available,
   rating: Number(row.rating),
   media: row.media || [],

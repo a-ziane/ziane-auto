@@ -3,6 +3,7 @@
   <div class="container hero-inner">
     <div>
       <p class="eyebrow"><%= t.hero.location %></p>
+      <p class="welcome"><%= t.hero.welcome %></p>
       <h1><%= t.hero.title %></h1>
       <p class="lead"><%= t.hero.subtitle %></p>
       <div class="actions">
@@ -11,10 +12,10 @@
       </div>
     </div>
     <div class="hero-card hero-card--spaced">
-      <img src="/cars/atlas-full-1.jpg" alt="Showroom" />
+      <img src="/home.png" alt="Showroom" />
       <div class="hero-caption">
-        <span>Signature</span>
-        <strong>Showroom Picks</strong>
+        <span><%= t.hero.signature %></span>
+        <strong><%= t.hero.picks %></strong>
       </div>
     </div>
   </div>
@@ -23,20 +24,20 @@
 <section class="container stats">
   <div class="stat">
     <span>120+</span>
-    <p>Curated imports delivered</p>
+    <p><%= t.stats.imports %></p>
   </div>
   <div class="stat">
     <span>24h</span>
-    <p>Average response time</p>
+    <p><%= t.stats.response %></p>
   </div>
   <div class="stat">
     <span>5★</span>
-    <p>Owner satisfaction rating</p>
+    <p><%= t.stats.rating %></p>
   </div>
 </section>
 
 <section class="container highlights">
-  <% highlights.forEach((item) => { %>
+  <% t.highlights.forEach((item) => { %>
     <div class="card">
       <p class="eyebrow"><%= item.title %></p>
       <p><%= item.description %></p>

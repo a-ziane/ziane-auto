@@ -28,6 +28,11 @@ async function seed() {
   await pool.query('DELETE FROM cars')
 
   for (const car of cars) {
+    const descriptionValue =
+      typeof car.description === 'string'
+        ? car.description
+        : JSON.stringify(car.description)
+
     await pool.query(
       `INSERT INTO cars (id, brand, model, year, price, description, available, rating, fuel, horsepower, torque, transmission, drivetrain, engine, mileage, seats)
        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16)`,
@@ -37,7 +42,7 @@ async function seed() {
         car.model,
         car.year,
         car.price,
-        car.description,
+        descriptionValue,
         car.available,
         car.rating,
         car.specs.fuel,

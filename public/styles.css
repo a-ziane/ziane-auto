@@ -39,6 +39,11 @@ a {
   text-decoration: none;
 }
 
+.container {
+  width: min(1120px, 90%);
+  margin: 0 auto;
+}
+
 .za-navbar {
   background: rgba(10, 10, 10, 0.88);
   border-bottom: 1px solid var(--line);
@@ -46,6 +51,10 @@ a {
   top: 0;
   z-index: 10;
   backdrop-filter: blur(18px);
+}
+
+.za-header {
+  flex-wrap: wrap;
 }
 
 .za-logo {
@@ -82,6 +91,35 @@ a {
 .za-lang-btn.active {
   background: var(--gold-400);
   color: #111;
+}
+
+.za-menu {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--white);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.za-mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 0 16px;
+}
+
+.za-mobile-nav a {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.za-mobile-nav.open {
+  display: flex;
 }
 
 .hero {
@@ -163,8 +201,7 @@ a {
 }
 
 .hero-card--spaced {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 24px 0;
 }
 
 .hero-card img {
@@ -241,6 +278,10 @@ a {
   border-radius: 18px;
   padding: 18px;
   box-shadow: 0 0 40px rgba(209, 169, 83, 0.12);
+}
+
+.card p {
+  color: var(--white);
 }
 
 .card.car {
@@ -476,8 +517,10 @@ a {
   color: var(--muted);
 }
 
-.card p {
-  color: var(--white);
+.ltr {
+  direction: ltr;
+  unicode-bidi: bidi-override;
+  text-align: left;
 }
 
 @media (max-width: 720px) {

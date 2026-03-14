@@ -53,4 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
     setActive(0)
     start()
   })
+
+  const menuButton = document.querySelector('.za-menu')
+  const mobileNav = document.querySelector('.za-mobile-nav')
+
+  if (menuButton && mobileNav) {
+    menuButton.addEventListener('click', () => {
+      mobileNav.classList.toggle('open')
+    })
+  }
 })

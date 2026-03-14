@@ -13,17 +13,22 @@
 </head>
 <body class="za-bg">
   <header class="za-navbar">
-    <div class="container d-flex align-items-center justify-content-between py-3 gap-3">
+    <div class="container d-flex align-items-center justify-content-between py-3 gap-3 za-header">
       <a class="za-logo" href="/?lang=<%= lang %>">Ziane Auto</a>
       <nav class="za-nav d-none d-md-flex gap-4">
         <a href="/?lang=<%= lang %>"><%= t.nav.home %></a>
         <a href="/cars?lang=<%= lang %>"><%= t.nav.cars %></a>
       </nav>
+      <button class="za-menu d-md-none" type="button" aria-label="Toggle menu">Menu</button>
       <div class="za-lang">
         <a class="za-lang-btn <%= lang === 'en' ? 'active' : '' %>" href="<%= buildLangLink('en') %>">en</a>
         <a class="za-lang-btn <%= lang === 'fr' ? 'active' : '' %>" href="<%= buildLangLink('fr') %>">fr</a>
         <a class="za-lang-btn <%= lang === 'ar' ? 'active' : '' %>" href="<%= buildLangLink('ar') %>">ar</a>
       </div>
+    </div>
+    <div class="container za-mobile-nav d-md-none">
+      <a href="/?lang=<%= lang %>"><%= t.nav.home %></a>
+      <a href="/cars?lang=<%= lang %>"><%= t.nav.cars %></a>
     </div>
   </header>
   <main>

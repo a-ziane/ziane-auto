@@ -1,9 +1,9 @@
 <%- include('partials/header') %>
 <section class="container page-header">
-  <p class="eyebrow">Inventory</p>
+  <p class="eyebrow"><%= t.cars.inventoryLabel %></p>
   <h1><%= t.cars.title %></h1>
   <p class="muted"><%= t.cars.subtitle %></p>
-  <p class="muted small"><%= cars.length %> results</p>
+  <p class="muted small"><%= cars.length %> <%= t.cars.resultsLabel %></p>
 </section>
 
 <section class="container filters">
@@ -39,7 +39,7 @@
         <option value="reserved" <%= filters.availability === 'reserved' ? 'selected' : '' %>><%= t.cars.filters.reserved %></option>
       </select>
     </label>
-    <button class="btn btn-danger" type="submit">Filter</button>
+    <button class="btn btn-danger" type="submit"><%= t.cars.filterButton %></button>
   </form>
 </section>
 

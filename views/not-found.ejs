@@ -1,7 +1,7 @@
 <%- include('partials/header') %>
 <section class="container page-header">
-  <h1>Page not found</h1>
-  <p class="muted">The page you requested does not exist.</p>
-  <a class="btn btn-outline-dark" href="/?lang=<%= lang %>">Go back home</a>
+  <h1><%= t.notFound.title %></h1>
+  <p class="muted"><%= t.notFound.message %></p>
+  <a class="btn btn-outline-dark" href="/?lang=<%= lang %>"><%= t.notFound.back %></a>
 </section>
 <%- include('partials/footer') %>

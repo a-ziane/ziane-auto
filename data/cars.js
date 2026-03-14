@@ -5,7 +5,11 @@ const cars = [
     model: 'Coolray Manuel (Gris + Blanc)',
     year: 2026,
     price: '285M DZD',
-    description: 'Stylish crossover with manual transmission and two-tone finish.',
+    description: {
+      en: 'Stylish crossover with manual transmission and two-tone finish.',
+      fr: 'Crossover moderne avec boite manuelle et finition bicolore.',
+      ar: 'كروس أوفر أنيق بناقل يدوي ولمسة ثنائية اللون.'
+    },
     media: ['/cars/coolray-manuel-1.jpg', '/cars/coolray-manuel-2.jpg'],
     specs: {
       fuel: 'Gasoline',
@@ -26,7 +30,11 @@ const cars = [
     model: 'Coolray Full',
     year: 2026,
     price: '390M DZD',
-    description: 'Full option Coolray with premium tech and comfort.',
+    description: {
+      en: 'Full option Coolray with premium tech and comfort.',
+      fr: 'Version complete avec technologie premium et confort.',
+      ar: 'نسخة كاملة بتقنيات متقدمة وراحة ممتازة.'
+    },
     media: ['/cars/coolray-full-1.jpg', '/cars/coolray-full-2.jpg'],
     specs: {
       fuel: 'Gasoline',
@@ -47,7 +55,11 @@ const cars = [
     model: 'Coolray Full Toit Gris',
     year: 2026,
     price: '380M DZD',
-    description: 'Full option Coolray with gray roof styling.',
+    description: {
+      en: 'Full option Coolray with gray roof styling.',
+      fr: 'Version complete avec toit gris et style raffine.',
+      ar: 'نسخة كاملة مع سقف رمادي وتصميم مميز.'
+    },
     media: ['/cars/coolray-toit-gris-1.jpg', '/cars/coolray-toit-gris-2.jpg'],
     specs: {
       fuel: 'Gasoline',
@@ -68,7 +80,11 @@ const cars = [
     model: 'Coolray 1.5 Turbo Sans Package',
     year: 2026,
     price: '360M DZD',
-    description: '1.5 Turbo performance without extra package.',
+    description: {
+      en: '1.5 Turbo performance without extra package.',
+      fr: 'Performance 1.5 Turbo sans pack additionnel.',
+      ar: 'محرك 1.5 توربو بدون حزمة إضافية.'
+    },
     media: ['/cars/coolray-turbo-1.jpg', '/cars/coolray-turbo-2.jpg'],
     specs: {
       fuel: 'Gasoline',
@@ -89,7 +105,11 @@ const cars = [
     model: 'KX1',
     year: 2026,
     price: '320M DZD',
-    description: 'Compact SUV with modern design and smart tech.',
+    description: {
+      en: 'Compact SUV with modern design and smart tech.',
+      fr: 'SUV compact au design moderne et technologies intelligentes.',
+      ar: 'SUV مدمج بتصميم عصري وتقنيات ذكية.'
+    },
     media: ['/cars/kx1-1.jpg', '/cars/kx1-2.jpg'],
     specs: {
       fuel: 'Gasoline',
@@ -110,7 +130,11 @@ const cars = [
     model: 'Seltos Luxury',
     year: 2026,
     price: '430M DZD',
-    description: 'Luxury trim with premium interior and safety tech.',
+    description: {
+      en: 'Luxury trim with premium interior and safety tech.',
+      fr: 'Finition luxe avec interieur premium et technologies de securite.',
+      ar: 'فئة فاخرة مع داخلية راقية وتقنيات أمان.'
+    },
     media: ['/cars/seltos-luxury-1.jpg', '/cars/seltos-luxury-2.jpg'],
     specs: {
       fuel: 'Gasoline',
@@ -131,7 +155,11 @@ const cars = [
     model: 'Tharu XR Full',
     year: 2026,
     price: '445M DZD',
-    description: 'Full option Tharu XR with advanced driver assist.',
+    description: {
+      en: 'Full option Tharu XR with advanced driver assist.',
+      fr: 'Version complete avec aides a la conduite avancees.',
+      ar: 'نسخة كاملة مع أنظمة مساعدة قيادة متقدمة.'
+    },
     media: ['/cars/tharu-xr-1.jpg', '/cars/tharu-xr-2.jpg'],
     specs: {
       fuel: 'Gasoline',
@@ -152,7 +180,11 @@ const cars = [
     model: 'MG5 Manuel',
     year: 2026,
     price: '255M DZD',
-    description: 'Reliable sedan with manual transmission and great value.',
+    description: {
+      en: 'Reliable sedan with manual transmission and great value.',
+      fr: 'Berline fiable avec boite manuelle et excellent rapport qualite-prix.',
+      ar: 'سيدان موثوق بناقل يدوي وقيمة ممتازة.'
+    },
     media: ['/cars/mg5-manuel-1.jpg', '/cars/mg5-manuel-2.jpg'],
     specs: {
       fuel: 'Gasoline',
@@ -173,7 +205,11 @@ const cars = [
     model: 'T-Roc Black Black',
     year: 2026,
     price: '575M DZD',
-    description: 'Bold T-Roc edition with black exterior styling.',
+    description: {
+      en: 'Bold T-Roc edition with black exterior styling.',
+      fr: 'Edition T-Roc audacieuse avec finition exterieure noire.',
+      ar: 'إصدار T-Roc جريء بلمسات خارجية سوداء.'
+    },
     media: ['/cars/t-roc-black-1.jpg', '/cars/t-roc-black-2.jpg'],
     specs: {
       fuel: 'Gasoline',
@@ -194,7 +230,11 @@ const cars = [
     model: 'Atlas Full',
     year: 2026,
     price: '450M DZD',
-    description: 'Full option Atlas SUV with spacious interior.',
+    description: {
+      en: 'Full option Atlas SUV with spacious interior.',
+      fr: 'Version complete avec interieur spacieux.',
+      ar: 'نسخة كاملة مع مساحة داخلية واسعة.'
+    },
     media: ['/cars/atlas-full-1.jpg', '/cars/atlas-full-2.jpg'],
     specs: {
       fuel: 'Gasoline',

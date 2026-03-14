@@ -25,12 +25,34 @@ const dictionaries = {
     nav: { home: 'Home', cars: 'Cars' },
     hero: {
       location: 'Ain Touta, Batna',
+      welcome: 'Welcome',
       title: 'Drive the gold standard with Ziane Auto',
       subtitle: 'Premium car showroom focused on curated imports, performance, and personal service.',
       ctaPrimary: 'View Cars',
-      ctaSecondary: 'Order Now'
+      ctaSecondary: 'Order Now',
+      signature: 'Signature',
+      picks: 'Showroom Picks'
+    },
+    stats: {
+      imports: 'Curated imports delivered',
+      response: 'Average response time',
+      rating: 'Owner satisfaction rating'
     },
     featured: { label: 'Featured', title: 'Signature Inventory', viewAll: 'View All' },
+    highlights: [
+      {
+        title: 'Curated Imports',
+        description: 'Every vehicle is hand-selected for performance, comfort, and prestige.'
+      },
+      {
+        title: 'Verified History',
+        description: 'We verify ownership, service history, and inspection details for every car.'
+      },
+      {
+        title: 'Direct Owner Delivery',
+        description: 'Place your order and the Ziane Auto team will contact you within hours.'
+      }
+    ],
     order: {
       label: 'Order',
       title: 'Ready for your next car?',
@@ -40,7 +62,10 @@ const dictionaries = {
     cars: {
       title: 'All Cars',
       subtitle: 'Browse the full Ziane Auto collection. Filter by brand, year, and pricing to match your ideal drive.',
-      filters: { search: 'Search', brand: 'Brand', year: 'Year', availability: 'Availability', any: 'Any', available: 'Available', reserved: 'Reserved' }
+      filters: { search: 'Search', brand: 'Brand', year: 'Year', availability: 'Availability', any: 'Any', available: 'Available', reserved: 'Reserved' },
+      inventoryLabel: 'Inventory',
+      resultsLabel: 'results',
+      filterButton: 'Filter'
     },
     carDetail: {
       back: 'Back to inventory',
@@ -59,7 +84,20 @@ const dictionaries = {
       name: 'Full name',
       phone: 'Phone number',
       message: 'Message',
-      button: 'Send Order'
+      button: 'Send Order',
+      afterSubmit: 'After submitting, we will contact you shortly.'
+    },
+    orderConfirm: {
+      title: 'Order submitted',
+      message: 'Thank you. We received your order.',
+      detail: 'Our team will contact you shortly to confirm availability and next steps.',
+      browse: 'Browse cars',
+      back: 'Back home'
+    },
+    notFound: {
+      title: 'Page not found',
+      message: 'The page you requested does not exist.',
+      back: 'Go back home'
     },
     specs: {
       title: 'Specs',
@@ -83,12 +121,34 @@ const dictionaries = {
     nav: { home: 'Accueil', cars: 'Voitures' },
     hero: {
       location: 'Ain Touta, Batna',
+      welcome: 'Bienvenue',
       title: 'Le standard or avec Ziane Auto',
       subtitle: 'Showroom premium spécialisé dans les importations, la performance et le service personnalisé.',
       ctaPrimary: 'Voir les voitures',
-      ctaSecondary: 'Commander'
+      ctaSecondary: 'Commander',
+      signature: 'Signature',
+      picks: 'Selection showroom'
+    },
+    stats: {
+      imports: 'Importations selectionnees livreес',
+      response: 'Temps de reponse moyen',
+      rating: 'Satisfaction client'
     },
     featured: { label: 'Vedette', title: 'Inventaire signature', viewAll: 'Voir tout' },
+    highlights: [
+      {
+        title: 'Importations selectionnees',
+        description: 'Chaque vehicule est choisi pour sa performance, son confort et son prestige.'
+      },
+      {
+        title: 'Historique verifie',
+        description: 'Nous verifions la propriete, l entretien et les controles pour chaque voiture.'
+      },
+      {
+        title: 'Livraison directe',
+        description: 'Passez commande et l equipe Ziane Auto vous contactera rapidement.'
+      }
+    ],
     order: {
       label: 'Commande',
       title: 'Prêt pour votre prochaine voiture ?',
@@ -98,7 +158,10 @@ const dictionaries = {
     cars: {
       title: 'Toutes les voitures',
       subtitle: 'Parcourez toute la collection Ziane Auto. Filtrez par marque, année et prix.',
-      filters: { search: 'Recherche', brand: 'Marque', year: 'Année', availability: 'Disponibilité', any: 'Tout', available: 'Disponible', reserved: 'Réservée' }
+      filters: { search: 'Recherche', brand: 'Marque', year: 'Année', availability: 'Disponibilité', any: 'Tout', available: 'Disponible', reserved: 'Réservée' },
+      inventoryLabel: 'Inventaire',
+      resultsLabel: 'resultats',
+      filterButton: 'Filtrer'
     },
     carDetail: {
       back: 'Retour à la liste',
@@ -117,7 +180,20 @@ const dictionaries = {
       name: 'Nom complet',
       phone: 'Téléphone',
       message: 'Message',
-      button: 'Envoyer'
+      button: 'Envoyer',
+      afterSubmit: 'Apres envoi, nous vous contacterons rapidement.'
+    },
+    orderConfirm: {
+      title: 'Commande envoyee',
+      message: 'Merci. Nous avons bien recu votre commande.',
+      detail: 'Notre equipe confirmera la disponibilite et les prochaines etapes.',
+      browse: 'Voir les voitures',
+      back: 'Retour accueil'
+    },
+    notFound: {
+      title: 'Page introuvable',
+      message: 'La page demandee est introuvable.',
+      back: 'Retour accueil'
     },
     specs: {
       title: 'Fiche',
@@ -141,12 +217,34 @@ const dictionaries = {
     nav: { home: 'الرئيسية', cars: 'السيارات' },
     hero: {
       location: 'عين التوتة، باتنة',
+      welcome: 'مرحبا',
       title: 'المعيار الذهبي مع زيان أوتو',
       subtitle: 'معرض سيارات فاخر متخصص في الاستيراد، الأداء، والخدمة الشخصية.',
       ctaPrimary: 'عرض السيارات',
-      ctaSecondary: 'اطلب الآن'
+      ctaSecondary: 'اطلب الآن',
+      signature: 'مختارة',
+      picks: 'سيارات المعرض'
+    },
+    stats: {
+      imports: 'سيارات مستوردة تم تسليمها',
+      response: 'متوسط وقت الرد',
+      rating: 'تقييم رضا العملاء'
     },
     featured: { label: 'مميز', title: 'سيارات مختارة', viewAll: 'عرض الكل' },
+    highlights: [
+      {
+        title: 'استيراد مختار',
+        description: 'كل سيارة يتم اختيارها بعناية للأداء والراحة والفخامة.'
+      },
+      {
+        title: 'سجل موثق',
+        description: 'نؤكد الملكية وسجل الصيانة والفحص لكل سيارة.'
+      },
+      {
+        title: 'تسليم مباشر',
+        description: 'قدّم طلبك وسيقوم فريق زيان أوتو بالتواصل خلال ساعات.'
+      }
+    ],
     order: {
       label: 'طلب',
       title: 'جاهز لسيارتك القادمة؟',
@@ -156,7 +254,10 @@ const dictionaries = {
     cars: {
       title: 'جميع السيارات',
       subtitle: 'تصفح مجموعة زيان أوتو بالكامل مع إمكانية التصفية حسب الماركة والسنة والسعر.',
-      filters: { search: 'بحث', brand: 'الماركة', year: 'السنة', availability: 'التوفر', any: 'الكل', available: 'متوفر', reserved: 'محجوز' }
+      filters: { search: 'بحث', brand: 'الماركة', year: 'السنة', availability: 'التوفر', any: 'الكل', available: 'متوفر', reserved: 'محجوز' },
+      inventoryLabel: 'المخزون',
+      resultsLabel: 'نتائج',
+      filterButton: 'تصفية'
     },
     carDetail: {
       back: 'العودة للقائمة',
@@ -175,7 +276,20 @@ const dictionaries = {
       name: 'الاسم الكامل',
       phone: 'رقم الهاتف',
       message: 'رسالة',
-      button: 'إرسال الطلب'
+      button: 'إرسال الطلب',
+      afterSubmit: 'بعد الإرسال سنتواصل معك قريبا.'
+    },
+    orderConfirm: {
+      title: 'تم ارسال الطلب',
+      message: 'شكرا لك. تم استلام طلبك.',
+      detail: 'سيتم التواصل لتأكيد التوفر والخطوات القادمة.',
+      browse: 'عرض السيارات',
+      back: 'العودة للرئيسية'
+    },
+    notFound: {
+      title: 'الصفحة غير موجودة',
+      message: 'الصفحة المطلوبة غير متاحة.',
+      back: 'العودة للرئيسية'
     },
     specs: {
       title: 'المواصفات',
@@ -196,6 +310,17 @@ const dictionaries = {
     }
   }
 }
+
+const getLocalizedDescription = (description, lang) => {
+  if (!description) return ''
+  if (typeof description === 'string') return description
+  return description[lang] || description.en || ''
+}
+
+const localizeCar = (car, lang) => ({
+  ...car,
+  description: getLocalizedDescription(car.description, lang)
+})
 
 const getLang = (req) => {
   const requested = String(req.query.lang || '').toLowerCase()
@@ -218,7 +343,7 @@ app.use((req, res, next) => {
 })
 
 app.get('/', async (req, res) => {
-  const cars = await db.getCars()
+  const cars = (await db.getCars()).map((car) => localizeCar(car, res.locals.lang))
   res.render('index', {
     highlights,
     featuredCars: cars.slice(0, 3)
@@ -231,7 +356,7 @@ app.get('/cars', async (req, res) => {
   const year = String(req.query.year || '')
   const availability = String(req.query.availability || '')
 
-  const cars = await db.getCars()
+  const cars = (await db.getCars()).map((car) => localizeCar(car, res.locals.lang))
   const filtered = cars.filter((car) => {
     const matchesSearch =
       !search ||
@@ -257,7 +382,8 @@ app.get('/cars', async (req, res) => {
 })
 
 app.get('/cars/:id', async (req, res) => {
-  const car = await db.getCarById(req.params.id)
+  const carData = await db.getCarById(req.params.id)
+  const car = carData ? localizeCar(carData, res.locals.lang) : null
   if (!car) {
     return res.status(404).render('not-found')
   }

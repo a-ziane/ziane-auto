@@ -1,12 +1,12 @@
 <%- include('partials/header') %>
 <section class="container page-header">
   <div class="card confirmation">
-    <p class="eyebrow">Order submitted</p>
-    <h1>Thank you. We received your order.</h1>
-    <p class="muted">Our team will contact you shortly to confirm availability and next steps.</p>
+    <p class="eyebrow"><%= t.orderConfirm.title %></p>
+    <h1><%= t.orderConfirm.message %></h1>
+    <p class="muted"><%= t.orderConfirm.detail %></p>
     <div class="actions">
-      <a class="btn btn-danger" href="/cars?lang=<%= lang %>">Browse cars</a>
-      <a class="btn btn-outline-dark" href="/?lang=<%= lang %>">Back home</a>
+      <a class="btn btn-danger" href="/cars?lang=<%= lang %>"><%= t.orderConfirm.browse %></a>
+      <a class="btn btn-outline-dark" href="/?lang=<%= lang %>"><%= t.orderConfirm.back %></a>
     </div>
   </div>
 </section>
