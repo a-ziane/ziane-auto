@@ -1,7 +1,9 @@
 :root {
   --coal-950: #0a0a0a;
   --coal-900: #0f0f10;
+  --coal-850: #151517;
   --coal-800: #1a1a1b;
+  --gold-100: #fff2cc;
   --gold-200: #f6d78b;
   --gold-400: #d1a953;
   --gold-600: #b2832f;
@@ -14,8 +16,11 @@
 body.bg {
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
-  background: var(--coal-950);
+  background: radial-gradient(circle at top right, rgba(209, 169, 83, 0.18), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.06), transparent 35%),
+    var(--coal-950);
   color: #fff;
+  min-height: 100vh;
 }
 
 [dir='rtl'] body.bg {
@@ -28,7 +33,7 @@ a {
 }
 
 .container {
-  width: min(1100px, 92%);
+  width: min(1120px, 92%);
   margin: 0 auto;
 }
 
@@ -37,7 +42,7 @@ a {
   top: 0;
   z-index: 10;
   background: rgba(10, 10, 10, 0.9);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(16px);
   border-bottom: 1px solid #1f1f21;
 }
 
@@ -84,6 +89,7 @@ a {
   padding: 4px 10px;
   border-radius: 999px;
   color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
 }
 
 .lang-btn.active {
@@ -92,8 +98,6 @@ a {
 }
 
 .hero {
-  background: radial-gradient(circle at top right, rgba(209, 169, 83, 0.28), transparent 45%),
-    radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.08), transparent 40%);
   border-bottom: 1px solid #1f1f21;
   padding: 80px 0;
 }
@@ -138,11 +142,16 @@ a {
   font-size: 12px;
   letter-spacing: 0.35em;
   text-transform: uppercase;
+  transition: all 0.2s ease;
 }
 
 .btn.primary {
   background: var(--gold-400);
   color: #111;
+}
+
+.btn.primary:hover {
+  background: var(--gold-200);
 }
 
 .btn.ghost {
@@ -155,6 +164,7 @@ a {
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid #2a2a2d;
+  box-shadow: 0 0 40px rgba(209, 169, 83, 0.15);
 }
 
 .hero-card img {
@@ -203,7 +213,7 @@ a {
 }
 
 .card {
-  background: rgba(15, 15, 16, 0.75);
+  background: rgba(15, 15, 16, 0.82);
   border: 1px solid #2a2a2d;
   border-radius: 18px;
   padding: 18px;
@@ -213,6 +223,12 @@ a {
 .card.car {
   padding: 0;
   overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.card.car:hover {
+  transform: translateY(-4px);
+  border-color: rgba(209, 169, 83, 0.6);
 }
 
 .card.car img {
@@ -276,6 +292,7 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 14px;
+  align-items: end;
 }
 
 .filters-grid label {
@@ -306,15 +323,73 @@ a {
   padding-bottom: 60px;
 }
 
-.gallery {
-  display: grid;
-  gap: 12px;
+.slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid #2a2a2d;
+  background: #101012;
 }
 
-.gallery img {
+.slides {
+  position: relative;
+  height: 360px;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  border-radius: 16px;
-  border: 1px solid #2a2a2d;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 16px;
+  z-index: 2;
+  background: rgba(10, 10, 10, 0.7);
+  border: 1px solid rgba(209, 169, 83, 0.5);
+  color: var(--gold-200);
+  padding: 6px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 10px;
+}
+
+.slide-btn.prev {
+  right: 90px;
+}
+
+.slide-btn.next {
+  right: 16px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 16px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.dot.active {
+  background: var(--gold-200);
 }
 
 .specs-grid {
@@ -345,6 +420,10 @@ a {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.2em;
+}
+
+.confirmation {
+  text-align: center;
 }
 
 .footer {
@@ -378,5 +457,8 @@ a {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+  }
+  .slides {
+    height: 260px;
   }
 }

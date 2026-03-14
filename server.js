@@ -1,9 +1,17 @@
+require('dotenv').config()
+
 const path = require('path')
 const express = require('express')
-const { cars, highlights } = require('./data/cars')
+const { highlights } = require('./data/cars')
+const db = require('./db')
 
 const app = express()
 const PORT = process.env.PORT || 3000
+
+if (!process.env.DATABASE_URL) {
+  console.error('DATABASE_URL is missing. Add it to .env before starting the server.')
+  process.exit(1)
+}
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
@@ -209,19 +217,21 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+  const cars = await db.getCars()
   res.render('index', {
     highlights,
     featuredCars: cars.slice(0, 3)
   })
 })
 
-app.get('/cars', (req, res) => {
+app.get('/cars', async (req, res) => {
   const search = String(req.query.search || '').toLowerCase()
   const brand = String(req.query.brand || '')
   const year = String(req.query.year || '')
   const availability = String(req.query.availability || '')
 
+  const cars = await db.getCars()
   const filtered = cars.filter((car) => {
     const matchesSearch =
       !search ||
@@ -246,8 +256,8 @@ app.get('/cars', (req, res) => {
   })
 })
 
-app.get('/cars/:id', (req, res) => {
-  const car = cars.find((item) => item.id === req.params.id)
+app.get('/cars/:id', async (req, res) => {
+  const car = await db.getCarById(req.params.id)
   if (!car) {
     return res.status(404).render('not-found')
   }
@@ -255,9 +265,21 @@ app.get('/cars/:id', (req, res) => {
 })
 
 app.post('/api/orders', async (req, res) => {
-  const { carName, customerName, phone, message } = req.body
+  const { carId, carName, customerName, phone, message, lang } = req.body
   if (!customerName || !phone) {
     return res.status(400).json({ error: 'Missing fields' })
+  }
+
+  try {
+    await db.createOrder({
+      carId: carId || null,
+      carName,
+      customerName,
+      phone,
+      message
+    })
+  } catch (error) {
+    return res.status(500).json({ error: 'Database insert failed' })
   }
 
   const botToken = process.env.TELEGRAM_BOT_TOKEN
@@ -276,7 +298,11 @@ app.post('/api/orders', async (req, res) => {
     }
   }
 
-  return res.json({ ok: true })
+  return res.redirect(`/order-confirmed?lang=${lang || 'en'}`)
+})
+
+app.get('/order-confirmed', (req, res) => {
+  res.render('order-confirmed')
 })
 
 app.use((req, res) => {

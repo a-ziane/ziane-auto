@@ -10,10 +10,19 @@
       <h1><%= car.model %></h1>
       <p class="muted"><%= car.year %></p>
     </div>
-    <div class="gallery">
-      <% car.media.forEach((item) => { %>
-        <img src="<%= item %>" alt="<%= car.brand %> <%= car.model %>" />
-      <% }) %>
+    <div class="slider" data-auto="true">
+      <button class="slide-btn prev" type="button" aria-label="Previous image">Prev</button>
+      <button class="slide-btn next" type="button" aria-label="Next image">Next</button>
+      <div class="slides">
+        <% car.media.forEach((item, index) => { %>
+          <img class="slide <%= index === 0 ? 'active' : '' %>" src="<%= item %>" alt="<%= car.brand %> <%= car.model %>" />
+        <% }) %>
+      </div>
+      <div class="dots">
+        <% car.media.forEach((item, index) => { %>
+          <span class="dot <%= index === 0 ? 'active' : '' %>" data-index="<%= index %>"></span>
+        <% }) %>
+      </div>
     </div>
     <div class="card">
       <p class="eyebrow"><%= t.carDetail.description %></p>
@@ -44,7 +53,9 @@
       <p class="muted"><%= t.carDetail.availabilityNote %></p>
     </div>
     <form class="card form" method="post" action="/api/orders">
+      <input type="hidden" name="carId" value="<%= car.id %>" />
       <input type="hidden" name="carName" value="<%= car.brand %> <%= car.model %>" />
+      <input type="hidden" name="lang" value="<%= lang %>" />
       <p class="eyebrow"><%= t.order.label %></p>
       <h3><%= t.orderForm.title %></h3>
       <label>
