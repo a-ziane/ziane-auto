@@ -46,35 +46,6 @@ npm run dev
 ```
 Open `http://localhost:3000`.
 
-## Local Media
-Put your images and videos here:
-```
-public/cars
-```
-The demo uses these sample filenames (edit `lib/data.ts` if you want to change them):
-- `coolray-manuel-1.jpg`, `coolray-manuel-2.jpg`
-- `coolray-full-1.jpg`, `coolray-full-2.jpg`
-- `coolray-toit-gris-1.jpg`, `coolray-toit-gris-2.jpg`
-- `coolray-turbo-1.jpg`, `coolray-turbo-2.jpg`
-- `kx1-1.jpg`, `kx1-2.jpg`
-- `seltos-luxury-1.jpg`, `seltos-luxury-2.jpg`
-- `tharu-xr-1.jpg`, `tharu-xr-2.jpg`
-- `mg5-manuel-1.jpg`, `mg5-manuel-2.jpg`
-- `t-roc-black-1.jpg`, `t-roc-black-2.jpg`
-- `atlas-full-1.jpg`, `atlas-full-2.jpg`
-
-Videos:
-- `coolray-manuel.mp4`
-- `coolray-full.mp4`
-- `coolray-toit-gris.mp4`
-- `coolray-turbo.mp4`
-- `kx1.mp4`
-- `seltos-luxury.mp4`
-- `tharu-xr.mp4`
-- `mg5-manuel.mp4`
-- `t-roc-black.mp4`
-- `atlas-full.mp4`
-
 ## Order Flow
 1. User fills order form
 2. `POST /api/orders`
