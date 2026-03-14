@@ -2,15 +2,18 @@
 
 import Link from 'next/link'
 import CarCard from '@/components/CarCard'
-import MediaCarousel from '@/components/MediaCarousel'
+import MediaCarousel, { type MediaItem } from '@/components/MediaCarousel'
 import { cars } from '@/lib/data'
 import { useLanguage } from '@/components/LanguageProvider'
 
 export default function HomePage() {
   const { t } = useLanguage()
 
-  const heroMedia = [
-    { url: 'https://res.cloudinary.com/demo/image/upload/v1690971611/sample.jpg', type: 'image' }
+  const heroMedia: MediaItem[] = [
+    {
+      url: 'https://res.cloudinary.com/demo/image/upload/v1690971611/sample.jpg',
+      type: 'image'
+    }
   ]
 
   return (
