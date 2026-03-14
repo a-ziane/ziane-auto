@@ -17,7 +17,6 @@ export type Car = {
   price: string
   description: string
   media: { url: string; type: 'image' | 'video' }[]
-  videoUrl?: string
   specs: CarSpecs
   available: boolean
   rating: number
@@ -35,7 +34,6 @@ export const cars: Car[] = [
       { url: '/cars/coolray-manuel-1.jpg', type: 'image' },
       { url: '/cars/coolray-manuel-2.jpg', type: 'image' }
     ],
-    videoUrl: '/cars/coolray-manuel.mp4',
     specs: {
       fuel: 'Gasoline',
       horsepower: '172 hp',
@@ -60,7 +58,6 @@ export const cars: Car[] = [
       { url: '/cars/coolray-full-1.jpg', type: 'image' },
       { url: '/cars/coolray-full-2.jpg', type: 'image' }
     ],
-    videoUrl: '/cars/coolray-full.mp4',
     specs: {
       fuel: 'Gasoline',
       horsepower: '177 hp',
@@ -85,7 +82,6 @@ export const cars: Car[] = [
       { url: '/cars/coolray-toit-gris-1.jpg', type: 'image' },
       { url: '/cars/coolray-toit-gris-2.jpg', type: 'image' }
     ],
-    videoUrl: '/cars/coolray-toit-gris.mp4',
     specs: {
       fuel: 'Gasoline',
       horsepower: '177 hp',
@@ -110,7 +106,6 @@ export const cars: Car[] = [
       { url: '/cars/coolray-turbo-1.jpg', type: 'image' },
       { url: '/cars/coolray-turbo-2.jpg', type: 'image' }
     ],
-    videoUrl: '/cars/coolray-turbo.mp4',
     specs: {
       fuel: 'Gasoline',
       horsepower: '172 hp',
@@ -135,7 +130,6 @@ export const cars: Car[] = [
       { url: '/cars/kx1-1.jpg', type: 'image' },
       { url: '/cars/kx1-2.jpg', type: 'image' }
     ],
-    videoUrl: '/cars/kx1.mp4',
     specs: {
       fuel: 'Gasoline',
       horsepower: '112 hp',
@@ -160,7 +154,6 @@ export const cars: Car[] = [
       { url: '/cars/seltos-luxury-1.jpg', type: 'image' },
       { url: '/cars/seltos-luxury-2.jpg', type: 'image' }
     ],
-    videoUrl: '/cars/seltos-luxury.mp4',
     specs: {
       fuel: 'Gasoline',
       horsepower: '149 hp',
@@ -185,7 +178,6 @@ export const cars: Car[] = [
       { url: '/cars/tharu-xr-1.jpg', type: 'image' },
       { url: '/cars/tharu-xr-2.jpg', type: 'image' }
     ],
-    videoUrl: '/cars/tharu-xr.mp4',
     specs: {
       fuel: 'Gasoline',
       horsepower: '150 hp',
@@ -210,7 +202,6 @@ export const cars: Car[] = [
       { url: '/cars/mg5-manuel-1.jpg', type: 'image' },
       { url: '/cars/mg5-manuel-2.jpg', type: 'image' }
     ],
-    videoUrl: '/cars/mg5-manuel.mp4',
     specs: {
       fuel: 'Gasoline',
       horsepower: '118 hp',
@@ -235,7 +226,6 @@ export const cars: Car[] = [
       { url: '/cars/t-roc-black-1.jpg', type: 'image' },
       { url: '/cars/t-roc-black-2.jpg', type: 'image' }
     ],
-    videoUrl: '/cars/t-roc-black.mp4',
     specs: {
       fuel: 'Gasoline',
       horsepower: '150 hp',
@@ -260,7 +250,6 @@ export const cars: Car[] = [
       { url: '/cars/atlas-full-1.jpg', type: 'image' },
       { url: '/cars/atlas-full-2.jpg', type: 'image' }
     ],
-    videoUrl: '/cars/atlas-full.mp4',
     specs: {
       fuel: 'Gasoline',
       horsepower: '181 hp',

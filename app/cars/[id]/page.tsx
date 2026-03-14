@@ -42,18 +42,6 @@ export default function CarDetailPage({ params }: { params: { id: string } }) {
             <p className="text-white/70">{car.year}</p>
           </div>
           <MediaCarousel items={car.media} />
-          {car.videoUrl ? (
-            <div className="glass-card overflow-hidden rounded-2xl border border-coal-800">
-              <div className="relative aspect-[16/9] w-full">
-                <video
-                  src={car.videoUrl}
-                  className="h-full w-full object-cover"
-                  controls
-                  playsInline
-                />
-              </div>
-            </div>
-          ) : null}
           <div className="glass-card rounded-2xl border border-coal-800 p-6">
             <p className="text-xs uppercase tracking-[0.4em] text-gold-200">
               {t.carDetail.description}
