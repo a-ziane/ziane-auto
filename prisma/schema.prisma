@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum MediaType {
+  image
+  video
+}
+
+enum OrderStatus {
+  new
+  contacted
+  sold
+}
+
+model Car {
+  id          String      @id @default(cuid())
+  brand       String
+  model       String
+  year        Int
+  price       String
+  description String
+  createdAt   DateTime    @default(now())
+  available   Boolean     @default(true)
+  media       CarMedia[]
+  orders      Order[]
+  ratings     Rating[]
+}
+
+model CarMedia {
+  id        String    @id @default(cuid())
+  carId     String
+  url       String
+  type      MediaType
+  createdAt DateTime  @default(now())
+  car       Car       @relation(fields: [carId], references: [id])
+}
+
+model Order {
+  id           String      @id @default(cuid())
+  carId        String?
+  customerName String
+  phone        String
+  message      String
+  createdAt    DateTime    @default(now())
+  status       OrderStatus @default(new)
+  car          Car?        @relation(fields: [carId], references: [id])
+}
+
+model Rating {
+  id        String   @id @default(cuid())
+  carId     String
+  rating    Int
+  comment   String?
+  createdAt DateTime @default(now())
+  car       Car      @relation(fields: [carId], references: [id])
+}

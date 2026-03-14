@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-coal-950 text-white font-serif;
+  min-height: 100vh;
+}
+
+html[dir='rtl'] body {
+  font-family: var(--font-arabic), serif;
+  letter-spacing: 0;
+}
+
+* {
+  @apply border-coal-800;
+}
+
+::selection {
+  background: rgba(209, 169, 83, 0.35);
+  color: white;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(120deg, rgba(209, 169, 83, 0.08), transparent 40%),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: auto, 36px 36px, 36px 36px;
+}
+
+.glass-card {
+  background: rgba(15, 15, 16, 0.75);
+  backdrop-filter: blur(14px);
+}
+
+.gold-divider {
+  background: linear-gradient(90deg, transparent, rgba(209, 169, 83, 0.8), transparent);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSlow {
+  from {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out both;
+}
+
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
